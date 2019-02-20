@@ -41,13 +41,17 @@ class App extends Component {
     })
   }
 
+  deleteItem(key) {
+    console.log('DELETING', key);
+  }
+
   render() {
 
     return (
       <div>
         <Router>
           <Switch>
-            <Route exact path="/" render={() => <Main itemsList={this.state.itemsList} />} />
+            <Route exact path="/" render={() => <Main itemsList={this.state.itemsList} commentsList={this.state.commentsList} deleteItem={this.deleteItem} />} />
             <Route path="/NewItem" render={() => <NewItem addToItemsList={this.addToItemsList} />} />
             <Route path="/Comments" render={() => <Comments addToCommentsList={this.addToCommentsList} commentsList={this.state.commentsList} />} />
           </Switch>

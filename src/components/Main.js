@@ -5,7 +5,6 @@ import {Link} from "react-router-dom";
 class Main extends Component {
 
   render() {
-    console.log('LIST', this.props.itemsList);
     return (
       <div className="section-main">
         <div className="section-main">
@@ -27,11 +26,11 @@ class Main extends Component {
                         <div className="item-text"> {item} </div>
                         <div className="container-item-controls">
                           <Link to='/Comments' className="item-circle">
-                            <div className="item-text white">0</div>
+                            <div className="item-text white">{this.props.commentsList.length}</div>
                           </Link>
-                          <div className="item-delete-pink">
+                          <button onClick={this.props.deleteItem(item.key)} className="item-delete-pink">
                             <div className="item-text white">Delete</div>
-                          </div>
+                          </button>
                         </div>
                       </div>
                     </div>
