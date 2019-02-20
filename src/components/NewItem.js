@@ -48,7 +48,7 @@ class NewItem extends Component {
                   />
                 </div>
                 <div>
-                  <button onClick={() => this.props.addToList(this.state.item)} className="item-circle">
+                  <button onClick={() => this.props.addToItemsList(this.state.item)} className="item-circle">
                     <div className="item-text white">&gt;</div>
                   </button>
                 </div>

@@ -10,19 +10,34 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      itemsList: []
+      itemsList: [],
+      input: '',
+      inputComment: '',
+      commentsList: []
     }
 
     autoBind(this);
   }
 
-  addToList(inputFromNewItem) {
+  addToItemsList(inputFromNewItem) {
     console.log('LIST ARR', this.state.itemsList);
     console.log('inputFromNewItem', inputFromNewItem);
 
     this.state.itemsList.push(inputFromNewItem);
     this.setState({
       itemsList: this.state.itemsList,
+      input: ''
+    })
+  }
+
+  addToCommentsList(inputComment) {
+    console.log('commentsLIST', this.state.commentsList);
+    console.log('inputCommtnt', inputComment);
+
+    this.state.commentsList.push(inputComment);
+    this.setState({
+      commentsList: this.state.commentsList,
+      inputComment: ''
     })
   }
 
@@ -33,8 +48,8 @@ class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/" render={() => <Main itemsList={this.state.itemsList} />} />
-            <Route path="/NewItem" render={() => <NewItem addToList={this.addToList} />} />
-            <Route path="/Comments" component={Comments} />} />
+            <Route path="/NewItem" render={() => <NewItem addToItemsList={this.addToItemsList} />} />
+            <Route path="/Comments" render={() => <Comments addToCommentsList={this.addToCommentsList} commentsList={this.state.commentsList} />} />
           </Switch>
         </Router>
 
