@@ -1,17 +1,18 @@
 import React, {Component} from 'react';
+import {Link} from "react-router-dom";
 
 class Comments extends Component {
   render() {
     return (
 
-      <body className="body">
+      <div className="body">
         <div className="section-main">
           <div className="container-main">
             <div className="header-block">
               <div className="container-flex-row">
-                <div className="item-circle">
+                <Link to='/' className="item-circle">
                   <div className="item-text white">⟵</div>
-                </div>
+                </Link>
                 <h2 className="heading-item">First item with customized long title</h2>
               </div>
             </div>
@@ -39,7 +40,7 @@ class Comments extends Component {
             </div>
           </div>
         </div>
-      </body>
+      </div>
 
     );
   }

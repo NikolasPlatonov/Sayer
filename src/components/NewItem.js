@@ -1,37 +1,67 @@
 import React, {Component} from 'react';
+import '../App.css';
+import autoBind from 'react-autobind';
 import {Link} from "react-router-dom";
 
 class NewItem extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      item: '',
+      itemsList: []
+    }
+
+    autoBind(this);
+  }
+
+  handleChange(input) {
+    this.setState({
+      item: input
+    })
+  }
+
   render() {
     return (
+      <div className="container-main">
+        <div className="header-block">
+          <div className="container-flex-row">
+            <Link to="/" className="item-circle">
+              <div className="item-text white">⟵</div>
+            </Link>
+            <h2 className="heading-item">Create new item</h2>
+          </div>
+        </div>
 
-      <body className="body">
         <div className="section-main">
-          <div className="container-main">
-            <div className="header-block">
-              <div className="container-flex-row">
-                <Link to="/">
-                  <div className="item-circle">
-                    <div className="item-text white">⟵</div>
-                  </div>
-                </Link>
-                <h2 className="heading-item">Create new item</h2>
-              </div>
-            </div>
+          <div className="container-main w-container">
+
             <div className="item-new-block">
               <div className="container-flex-row">
                 <div className="input-item">
-                  <div className="input-text">New item title...</div>
+                  <input
+                    className="input-text"
+                    placeholder="New item title..."
+                    type="text"
+                    value={this.state.item}
+                    onChange={(e) => this.handleChange(e.target.value)}
+                  />
                 </div>
-                <div className="item-circle">
-                  <div className="item-text white">&gt;</div>
+                <div>
+                  <button onClick={() => this.props.addToList(this.state.item)} className="item-circle">
+                    <div className="item-text white">&gt;</div>
+                  </button>
                 </div>
               </div>
             </div>
+
+            <ul>
+              {this.state.itemsList.map((val) => <ul key={val.toString()}>{val}</ul>)}
+            </ul>
+
           </div>
         </div>
-      </body>
-
+      </div>
     );
   }
 }
