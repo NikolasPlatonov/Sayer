@@ -19,22 +19,31 @@ class App extends Component {
     autoBind(this);
   }
 
-  addToItemsList(inputFromNewItem) {
-    console.log('LIST ARR', this.state.itemsList);
-    console.log('INPUT ITEM', inputFromNewItem);
+  addToItemsList(e) {
+    console.log('ITEMS LIST', this.state.itemsList);
+    console.log('INPUT ITEM', e);
 
-    this.state.itemsList.push(inputFromNewItem);
+    if (this.state.e !== "") {
+      var newItem = {
+        text: e,
+        key: Date.now()
+      }
+    };
+
+    this.state.itemsList.push(newItem);
+
     this.setState({
       itemsList: this.state.itemsList,
       input: ''
     })
   }
 
-  addToCommentsList(inputComment) {
-    console.log('commentsLIST', this.state.commentsList);
-    console.log('inputCommtnt', inputComment);
 
-    this.state.commentsList.push(inputComment);
+  addToCommentsList(e) {
+    console.log('commentsLIST', this.state.commentsList);
+    console.log('inputCommtnt', e);
+
+    this.state.commentsList.push(e);
     this.setState({
       commentsList: this.state.commentsList,
       inputComment: ''

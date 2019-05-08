@@ -49,18 +49,20 @@ class NewItem extends Component {
                   />
                 </div>
                 <div>
-                  <button onClick={() => this.props.addToItemsList(this.state.item)} className="item-circle">
+                  <button
+                    onClick={() => this.props.addToItemsList(this.state.item)}
+                    className="item-circle">
                     <Link to="/" className="item-circle">
                       <div className="item-text white">&gt;</div>
                     </Link>
-
                   </button>
                 </div>
               </div>
             </div>
 
             <ul>
-              {this.state.itemsList.map((val) => <ul key={val.toString()}>{val}</ul>)}
+              {this.state.itemsList.map((val) => <ul> {val} </ul>)}
+              {/* {this.state.itemsList.map((val) => <ul key={val.toString()}>{val}</ul>)} */}
             </ul>
 
           </div>

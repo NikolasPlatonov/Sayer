@@ -18,12 +18,12 @@ class Main extends Component {
 
             <ul>
               {this.props.itemsList.map((item) =>
-                <ul key={item.toString()}>
+                <ul key={item.key}>
 
                   <div className="section-main">
                     <div className="container-main">
                       <div className="item-block">
-                        <div className="item-text"> {item} </div>
+                        <div className="item-text"> {item.text} </div>
                         <div className="container-item-controls">
                           <Link to='/Comments' className="item-circle">
                             <div className="item-text white">{this.props.commentsList.length}</div>
