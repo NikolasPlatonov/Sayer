@@ -16,6 +16,7 @@ class NewItem extends Component {
   }
 
   handleChange(input) {
+    console.log('INPUT ITEM', this.state);
     this.setState({
       item: input
     })
@@ -49,7 +50,10 @@ class NewItem extends Component {
                 </div>
                 <div>
                   <button onClick={() => this.props.addToItemsList(this.state.item)} className="item-circle">
-                    <div className="item-text white">&gt;</div>
+                    <Link to="/" className="item-circle">
+                      <div className="item-text white">&gt;</div>
+                    </Link>
+
                   </button>
                 </div>
               </div>

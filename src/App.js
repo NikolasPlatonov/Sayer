@@ -21,7 +21,7 @@ class App extends Component {
 
   addToItemsList(inputFromNewItem) {
     console.log('LIST ARR', this.state.itemsList);
-    console.log('inputFromNewItem', inputFromNewItem);
+    console.log('INPUT ITEM', inputFromNewItem);
 
     this.state.itemsList.push(inputFromNewItem);
     this.setState({
