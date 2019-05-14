@@ -26,7 +26,7 @@ class Main extends Component {
                         <div className="item-text"> {item.text} </div>
                         <div className="container-item-controls">
                           <Link to='/Comments' className="item-circle">
-                            <div className="item-text white">{this.props.commentsList.length}</div>
+                            <div className="item-text white">{'0'}</div>
                           </Link>
                           <button onClick={this.props.deleteItem(item.key)} className="item-delete-pink">
                             <div className="item-text white">Delete</div>

@@ -13,7 +13,7 @@ class App extends Component {
       itemsList: [],
       input: '',
       inputComment: '',
-      commentsList: []
+      commentsList: [],
     }
 
     autoBind(this);
@@ -43,12 +43,31 @@ class App extends Component {
     console.log('commentsLIST', this.state.commentsList);
     console.log('inputCommtnt', e);
 
-    this.state.commentsList.push(e);
+    if (this.state.e !== "") {
+      var newItem = {
+        text: e,
+        key: Date.now()
+      }
+    };
+
+    this.state.commentsList.push(newItem);
+
     this.setState({
       commentsList: this.state.commentsList,
-      inputComment: ''
+      comment: ''
     })
   }
+
+  // addToCommentsList(e) {
+  //   console.log('commentsLIST', this.state.commentsList);
+  //   console.log('inputCommtnt', e);
+
+  //   this.state.commentsList.push(e);
+  //   this.setState({
+  //     commentsList: this.state.commentsList,
+  //     inputComment: ''
+  //   })
+  // }
 
   deleteItem(key) {
     console.log('DELETING', key);

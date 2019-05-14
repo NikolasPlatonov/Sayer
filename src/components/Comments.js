@@ -7,7 +7,8 @@ class Comments extends Component {
     super(props);
 
     this.state = {
-      inputComment: '',
+      comment: '',
+      commentList: []
     }
 
     autoBind(this);
@@ -17,7 +18,7 @@ class Comments extends Component {
     console.log('INPUT COMMENTS', this.state);
     return (
       this.setState({
-        inputComment: input
+        comment: input
       })
     )
   }
@@ -39,11 +40,11 @@ class Comments extends Component {
 
             <ul>
               {this.props.commentsList.map((comment) =>
-                <ul key={comment.toString()}>
+                <ul key={comment.key} >
                   <div className="item-details-block">
                     <div className="container-flex-row">
                       <div className="item-square pinked"></div>
-                      <p className="common-text"> {comment} </p>
+                      <p className="common-text"> {comment.text} </p>
                     </div>
                   </div>
                 </ul>)}
@@ -57,12 +58,14 @@ class Comments extends Component {
                     className="input-text"
                     placeholder="New comment goes here..."
                     type="text"
-                    value={this.state.inputComment}
+                    value={this.state.comment}
                     onChange={(e) => this.handleChange(e.target.value)}
                   />
 
                 </div>
-                <button onClick={(e) => this.props.addToCommentsList(this.state.inputComment)} className="item-circle">
+                <button
+                  onClick={() => this.props.addToCommentsList(this.state.comment)}
+                  className="item-circle">
                   <div className="item-text white">⟵</div>
                 </button>
               </div>

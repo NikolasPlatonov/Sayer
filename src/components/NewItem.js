@@ -40,6 +40,7 @@ class NewItem extends Component {
             <div className="item-new-block">
               <div className="container-flex-row">
                 <div className="input-item">
+
                   <input
                     className="input-text"
                     placeholder="New item title..."
@@ -47,22 +48,20 @@ class NewItem extends Component {
                     value={this.state.item}
                     onChange={(e) => this.handleChange(e.target.value)}
                   />
-                </div>
-                <div>
-                  <button
-                    onClick={() => this.props.addToItemsList(this.state.item)}
-                    className="item-circle">
-                    <Link to="/" className="item-circle">
-                      <div className="item-text white">&gt;</div>
-                    </Link>
-                  </button>
-                </div>
-              </div>
-            </div>
 
+                </div>
+                <button
+                  onClick={() => (this.state.item !== '' ? this.props.addToItemsList(this.state.item) : alert('Enter new item!'))}
+                  className="item-circle">
+                  <Link to="/" className="item-circle">
+                    <div className="item-text white">&gt;</div>
+                  </Link>
+                </button>
+              </div>
+
+            </div>
             <ul>
               {this.state.itemsList.map((val) => <ul> {val} </ul>)}
-              {/* {this.state.itemsList.map((val) => <ul key={val.toString()}>{val}</ul>)} */}
             </ul>
 
           </div>
