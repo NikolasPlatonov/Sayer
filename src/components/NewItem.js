@@ -16,7 +16,6 @@ class NewItem extends Component {
   }
 
   handleChange(input) {
-    console.log('INPUT ITEM', this.state);
     this.setState({
       item: input
     })

@@ -14,15 +14,13 @@ class App extends Component {
       input: '',
       inputComment: '',
       commentsList: [],
+      comment: ''
     }
 
     autoBind(this);
   }
 
   addToItemsList(e) {
-    console.log('ITEMS LIST', this.state.itemsList);
-    console.log('INPUT ITEM', e);
-
     if (this.state.e !== "") {
       var newItem = {
         text: e,
@@ -38,19 +36,16 @@ class App extends Component {
     })
   }
 
-
-  addToCommentsList(e) {
-    console.log('commentsLIST', this.state.commentsList);
-    console.log('inputCommtnt', e);
-
+  addToCommentsList(e, itemKey) {
     if (this.state.e !== "") {
-      var newItem = {
+      var newComment = {
         text: e,
-        key: Date.now()
+        key: Date.now(),
+        itemID: itemKey
       }
     };
 
-    this.state.commentsList.push(newItem);
+    this.state.commentsList.push(newComment);
 
     this.setState({
       commentsList: this.state.commentsList,
@@ -58,19 +53,16 @@ class App extends Component {
     })
   }
 
-  // addToCommentsList(e) {
-  //   console.log('commentsLIST', this.state.commentsList);
-  //   console.log('inputCommtnt', e);
-
-  //   this.state.commentsList.push(e);
-  //   this.setState({
-  //     commentsList: this.state.commentsList,
-  //     inputComment: ''
-  //   })
-  // }
+  getItemKey(array, search) {
+    var i = array.length;
+    while (i--) {
+      if (array[i].key === search) {
+        return array[i].value;
+      }
+    }
+  }
 
   deleteItem(key) {
-    console.log('DELETING', key);
   }
 
   render() {

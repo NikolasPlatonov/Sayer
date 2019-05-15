@@ -7,15 +7,13 @@ class Comments extends Component {
     super(props);
 
     this.state = {
-      comment: '',
-      commentList: []
+      comment: ''
     }
 
     autoBind(this);
   }
 
   handleChange(input) {
-    console.log('INPUT COMMENTS', this.state);
     return (
       this.setState({
         comment: input
@@ -63,6 +61,7 @@ class Comments extends Component {
                   />
 
                 </div>
+
                 <button
                   onClick={() => this.props.addToCommentsList(this.state.comment)}
                   className="item-circle">
