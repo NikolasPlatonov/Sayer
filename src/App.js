@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import NewItem from './components/NewItem';
 import Main from './components/Main';
 import autoBind from 'react-autobind';
@@ -58,11 +53,13 @@ class App extends Component {
   }
 
   deleteItem(id) {
-    //   const newItemsList = [...this.state.itemsList];
-    //   const updatedItemsList = newItemsList.filter(item => item.id !== id);
-    //   this.setState({
-    //     itemsList: updatedItemsList,
-    //   });
+    debugger;
+    const updatedItemsList = this.state.itemsList.filter(
+      item => item.id !== id
+    );
+    this.setState({
+      itemsList: updatedItemsList,
+    });
   }
 
   render() {
