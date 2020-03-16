@@ -8,7 +8,13 @@ h1 {
 
 .header-block {
   padding: 3vh 10px 5% 20px;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#0e1d3c), to(#0e1d3c));
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#0e1d3c),
+    to(#0e1d3c)
+  );
   background-image: linear-gradient(180deg, #0e1d3c, #0e1d3c);
 }
 
@@ -100,7 +106,13 @@ h1 {
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   border-radius: 60px;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#313464), to(#313464));
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#313464),
+    to(#313464)
+  );
   background-image: linear-gradient(180deg, #313464, #313464);
 }
 
@@ -127,7 +139,13 @@ h1 {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#d4145a), to(#d4145a));
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#d4145a),
+    to(#d4145a)
+  );
   background-image: linear-gradient(180deg, #d4145a, #d4145a);
 }
 
@@ -165,9 +183,15 @@ h1 {
   -ms-flex-align: center;
   align-items: center;
   border-radius: 100px;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#d4145a), to(#d4145a));
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#d4145a),
+    to(#d4145a)
+  );
   background-image: linear-gradient(180deg, #d4145a, #d4145a);
-  box-shadow: 2px 2px 13px 1px rgba(0, 0, 0, .54);
+  box-shadow: 2px 2px 13px 1px rgba(0, 0, 0, 0.54);
 }
 
 .item-text-plus {
@@ -266,12 +290,24 @@ h1 {
   -webkit-flex: 0 0 auto;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#313464), to(#313464));
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#313464),
+    to(#313464)
+  );
   background-image: linear-gradient(180deg, #313464, #313464);
 }
 
 .item-square.pinked {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#af7d93), to(#af7d95));
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#af7d93),
+    to(#af7d95)
+  );
   background-image: linear-gradient(180deg, #af7d93, #af7d93);
 }
 
@@ -315,7 +351,13 @@ h1 {
   -ms-flex-align: center;
   align-items: center;
   /* border-bottom: 2px solid #e9e9e9; */
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#e6e6e6), to(#e6e6e6));
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#e6e6e6),
+    to(#e6e6e6)
+  );
   background-image: linear-gradient(180deg, #e6e6e6, #e6e6e6);
 }
 
@@ -326,7 +368,13 @@ h1 {
   margin-right: 5vw;
   /* padding: 1vh 1vw; */
   /* border-bottom: 2px solid #e6e6e6; */
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#fff),
+    to(#fff)
+  );
   background-image: linear-gradient(180deg, #fff, #fff);
   align-items: center;
 }
@@ -334,7 +382,6 @@ h1 {
 .input-text {
   font-size: 1.5em;
   letter-spacing: 0px;
-  
 }
 
 .image-2 {
