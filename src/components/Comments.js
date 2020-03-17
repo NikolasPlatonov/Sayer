@@ -20,6 +20,7 @@ class Comments extends Component {
   }
 
   render() {
+    console.log('!!!!!!', this.props.propsSearch);
     return (
       <div className="body">
         <div className="section-main">
@@ -41,7 +42,7 @@ class Comments extends Component {
                   <div className="item-details-block">
                     <div className="container-flex-row">
                       <div className="item-square pinked"></div>
-                      <p className="common-text"> {comment.text} </p>
+                      <p className="common-text">{comment.text}</p>
                     </div>
                   </div>
                 </ul>

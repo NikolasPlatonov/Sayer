@@ -27,7 +27,10 @@ class Main extends Component {
                         <div className="item-text"> {item.text} </div>
                         <div className="container-item-controls">
                           <Link
-                            to={`/comments/${item.id}`}
+                            to={{
+                              pathname: `/comments/${item.id}`,
+                              propsSearch: item.id,
+                            }}
                             className="item-circle"
                           >
                             <div className="item-text white">

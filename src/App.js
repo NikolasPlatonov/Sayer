@@ -53,7 +53,6 @@ class App extends Component {
   }
 
   deleteItem(id) {
-    debugger;
     const updatedItemsList = this.state.itemsList.filter(
       item => item.id !== id
     );
@@ -86,7 +85,7 @@ class App extends Component {
             />
             <Route
               exact
-              path="/comments/:id?"
+              path="/comments/:id"
               render={() => (
                 <Comments
                   addToCommentsList={this.addToCommentsList}
