@@ -15,8 +15,16 @@ class App extends Component {
       inputComment: '',
       commentsList: [],
       comment: '',
-    };
 
+      // item: [
+      //   (itemsList = {
+      //     text: '',
+      //     id: '',
+      //     commentsList: [],
+      //     inputComment: '',
+      //   }),
+      // ],
+    };
     autoBind(this);
   }
 
@@ -32,7 +40,6 @@ class App extends Component {
 
     this.setState({
       itemsList: this.state.itemsList,
-      input: '',
     });
   }
 
@@ -54,7 +61,7 @@ class App extends Component {
 
   deleteItem(id) {
     const updatedItemsList = this.state.itemsList.filter(
-      item => item.id !== id
+      (item) => item.id !== id
     );
     this.setState({
       itemsList: updatedItemsList,

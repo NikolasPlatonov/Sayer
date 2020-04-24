@@ -22,6 +22,7 @@ class NewItem extends Component {
   }
 
   render() {
+    console.log('NewItem -> render -> this.state', this.state);
     return (
       <div className="container-main">
         <div className="header-block">
@@ -43,7 +44,7 @@ class NewItem extends Component {
                     placeholder="New item title..."
                     type="text"
                     value={this.state.item}
-                    onChange={e => this.handleChange(e.target.value)}
+                    onChange={(e) => this.handleChange(e.target.value)}
                   />
                 </div>
                 <button
@@ -61,7 +62,7 @@ class NewItem extends Component {
               </div>
             </div>
             <ul>
-              {this.state.itemsList.map(val => (
+              {this.state.itemsList.map((val) => (
                 <ul> {val} </ul>
               ))}
             </ul>

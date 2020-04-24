@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class Main extends Component {
   render() {
@@ -17,9 +17,8 @@ class Main extends Component {
                 </h5>
               </div>
             </div>
-
             <ul>
-              {this.props.itemsList.map(item => (
+              {this.props.itemsList.map((item) => (
                 <ul key={item.id}>
                   <div className="section-main">
                     <div className="container-main">
@@ -39,7 +38,6 @@ class Main extends Component {
                                 : '+'}
                             </div>
                           </Link>
-
                           <button
                             onClick={() => this.props.deleteItem(item.id)}
                             className="item-delete-pink"
@@ -53,13 +51,12 @@ class Main extends Component {
                 </ul>
               ))}
             </ul>
-
             <div>
               <div className="add-item-block">
                 <div className="item-circle-add">
                   <div>
                     <Link to="/NewItem">
-                      <div className="item-text-plus white">+</div>{' '}
+                      <div className="item-text-plus white">+</div>
                     </Link>
                   </div>
                 </div>
