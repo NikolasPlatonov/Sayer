@@ -22,7 +22,6 @@ class NewItem extends Component {
   }
 
   render() {
-    console.log('NewItem -> render -> this.state', this.state);
     return (
       <div className="container-main">
         <div className="header-block">

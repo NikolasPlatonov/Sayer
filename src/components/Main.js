@@ -4,7 +4,6 @@ import { Link, withRouter } from 'react-router-dom';
 
 class Main extends Component {
   render() {
-    console.log('MAIN_props', this.props);
     return (
       <div className="section-main">
         <div className="section-main">
@@ -34,7 +33,7 @@ class Main extends Component {
                           >
                             <div className="item-text white">
                               {this.props.commentsList.length > 0
-                                ? this.props.commentsList.length
+                                ? item.comments.length
                                 : '+'}
                             </div>
                           </Link>
@@ -69,4 +68,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default withRouter(Main);

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import autoBind from 'react-autobind';
 
 class Comments extends Component {
@@ -20,7 +20,6 @@ class Comments extends Component {
   }
 
   render() {
-    console.log('!!!!!!', this.props.propsSearch);
     return (
       <div className="body">
         <div className="section-main">
@@ -37,16 +36,18 @@ class Comments extends Component {
             </div>
 
             <ul>
-              {this.props.commentsList.map(comment => (
-                <ul key={comment.id}>
-                  <div className="item-details-block">
-                    <div className="container-flex-row">
-                      <div className="item-square pinked"></div>
-                      <p className="common-text">{comment.text}</p>
+              {this.props.commentsList.map((comment) =>
+                comment.id === this.props.location.pathname.slice(10) ? (
+                  <ul key={comment.id}>
+                    <div className="item-details-block">
+                      <div className="container-flex-row">
+                        <div className="item-square pinked" />
+                        <p className="common-text">{comment.text}</p>
+                      </div>
                     </div>
-                  </div>
-                </ul>
-              ))}
+                  </ul>
+                ) : null
+              )}
             </ul>
 
             <div className="item-new-comment-block">
@@ -57,13 +58,16 @@ class Comments extends Component {
                     placeholder="New comment goes here..."
                     type="text"
                     value={this.state.comment}
-                    onChange={e => this.handleChange(e.target.value)}
+                    onChange={(e) => this.handleChange(e.target.value)}
                   />
                 </div>
 
                 <button
                   onClick={() =>
-                    this.props.addToCommentsList(this.state.comment)
+                    this.props.addToCommentsList(
+                      this.state.comment,
+                      this.props.location.pathname.slice(10)
+                    )
                   }
                   className="item-circle"
                 >
@@ -78,4 +82,4 @@ class Comments extends Component {
   }
 }
 
-export default Comments;
+export default withRouter(Comments);

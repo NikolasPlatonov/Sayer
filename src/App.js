@@ -15,15 +15,6 @@ class App extends Component {
       inputComment: '',
       commentsList: [],
       comment: '',
-
-      // item: [
-      //   (itemsList = {
-      //     text: '',
-      //     id: '',
-      //     commentsList: [],
-      //     inputComment: '',
-      //   }),
-      // ],
     };
     autoBind(this);
   }
@@ -33,6 +24,7 @@ class App extends Component {
       var newItem = {
         text: e,
         id: Date.now(),
+        comments: [],
       };
     }
 
@@ -43,19 +35,16 @@ class App extends Component {
     });
   }
 
-  addToCommentsList(e) {
+  addToCommentsList(e, id) {
     if (this.state.e !== '') {
       var newComment = {
         text: e,
-        id: Date.now(),
+        id: id,
       };
     }
-
     this.state.commentsList.push(newComment);
-
     this.setState({
       commentsList: this.state.commentsList,
-      comment: '',
     });
   }
 
