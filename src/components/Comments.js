@@ -19,7 +19,14 @@ class Comments extends Component {
     });
   }
 
+  inputClear() {
+    return this.setState({
+      comment: '',
+    });
+  }
+
   render() {
+    console.log('Comments -> render -> comment', this.state.comment);
     return (
       <div className="body">
         <div className="section-main">
@@ -37,7 +44,7 @@ class Comments extends Component {
 
             <ul>
               {this.props.itemsList.map((i) =>
-                i.id == this.props.location.pathname.slice(10) &&
+                String(i.id) === this.props.location.pathname.slice(10) &&
                 i.comments.length
                   ? i.comments.map((c) => (
                       <ul key={Math.random()}>
@@ -70,7 +77,7 @@ class Comments extends Component {
                     this.props.addToCommentsList(
                       this.state.comment,
                       this.props.location.pathname.slice(10)
-                    )
+                    ) || this.inputClear()
                   }
                   className="item-circle"
                 >

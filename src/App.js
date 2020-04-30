@@ -11,10 +11,6 @@ class App extends Component {
     super(props);
     this.state = {
       itemsList: [],
-      input: '',
-      inputComment: '',
-      commentsList: [],
-      comment: '',
     };
     autoBind(this);
   }
@@ -41,8 +37,8 @@ class App extends Component {
         text: e,
       };
     }
-    this.state.itemsList.map((i) => {
-      if (i.id == id) {
+    this.state.itemsList.forEach((i) => {
+      if (String(i.id) === id) {
         i.comments.push(newComment);
       }
     });
@@ -61,7 +57,6 @@ class App extends Component {
   }
 
   render() {
-    console.log('APP__STATE', this.state);
     return (
       <div>
         <Router>
