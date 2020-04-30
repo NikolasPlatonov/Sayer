@@ -64,7 +64,7 @@ h1 {
 .container-main {
   margin-left: auto;
   margin-right: auto;
-  max-width: 940px;
+  max-width: 800px;
 }
 
 .body {
@@ -72,14 +72,14 @@ h1 {
 }
 
 .item-text {
-  font-size: 1.8em;
+  font-size: 1.5em;
   font-weight: 600;
+  max-width: 50%;
 }
 
 .item-text.white {
-  margin-bottom: 3px;
   color: #fcf5f7;
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: 400;
 }
 
@@ -121,12 +121,10 @@ h1 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  width: 16%;
+  width: 50%;
   height: 100%;
   max-width: 150px;
   min-height: 40px;
-  padding-right: 5px;
-  padding-left: 5px;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -201,8 +199,8 @@ h1 {
 
 .item-text-plus.white {
   color: #f5a8f0;
-  font-size: 2em;
-  font-weight: 700;
+  font-size: 1.5em;
+  font-weight: 600;
 }
 
 .container-2 {
@@ -428,10 +426,10 @@ h1 {
 }
 
 .text-block {
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 600px) {
   .body {
     font-size: 0.7em;
   }

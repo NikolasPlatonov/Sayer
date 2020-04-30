@@ -16,40 +16,38 @@ class Main extends Component {
                 </h5>
               </div>
             </div>
-            <ul>
-              {this.props.itemsList.map((item) => (
-                <ul key={item.id}>
-                  <div className="section-main">
-                    <div className="container-main">
-                      <div className="item-block">
-                        <div className="item-text"> {item.text} </div>
-                        <div className="container-item-controls">
-                          <Link
-                            to={{
-                              pathname: `/comments/${item.id}`,
-                              propsSearch: item.id,
-                            }}
-                            className="item-circle"
-                          >
-                            <div className="item-text white">
-                              {item.comments.length > 0
-                                ? item.comments.length
-                                : '+'}
-                            </div>
-                          </Link>
-                          <button
-                            onClick={() => this.props.deleteItem(item.id)}
-                            className="item-delete-pink"
-                          >
-                            <div className="item-text white">Delete</div>
-                          </button>
-                        </div>
+            {this.props.itemsList.map((item) => (
+              <div key={item.id}>
+                <div className="section-main">
+                  <div className="container-main">
+                    <div className="item-block">
+                      <div className="item-text"> {item.text} </div>
+                      <div className="container-item-controls">
+                        <Link
+                          to={{
+                            pathname: `/comments/${item.id}`,
+                            propsSearch: item.id,
+                          }}
+                          className="item-circle"
+                        >
+                          <div className="item-text white">
+                            {item.comments.length > 0
+                              ? item.comments.length
+                              : '+'}
+                          </div>
+                        </Link>
+                        <button
+                          onClick={() => this.props.deleteItem(item.id)}
+                          className="item-delete-pink"
+                        >
+                          <div className="item-text white">Delete</div>
+                        </button>
                       </div>
                     </div>
                   </div>
-                </ul>
-              ))}
-            </ul>
+                </div>
+              </div>
+            ))}
             <div>
               <div className="add-item-block">
                 <div className="item-circle-add">
