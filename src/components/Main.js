@@ -32,7 +32,7 @@ class Main extends Component {
                             className="item-circle"
                           >
                             <div className="item-text white">
-                              {this.props.commentsList.length > 0
+                              {item.comments.length > 0
                                 ? item.comments.length
                                 : '+'}
                             </div>

@@ -39,12 +39,15 @@ class App extends Component {
     if (this.state.e !== '') {
       var newComment = {
         text: e,
-        id: id,
       };
     }
-    this.state.commentsList.push(newComment);
+    this.state.itemsList.map((i) => {
+      if (i.id == id) {
+        i.comments.push(newComment);
+      }
+    });
     this.setState({
-      commentsList: this.state.commentsList,
+      itemsList: this.state.itemsList,
     });
   }
 
@@ -85,7 +88,7 @@ class App extends Component {
               render={() => (
                 <Comments
                   addToCommentsList={this.addToCommentsList}
-                  commentsList={this.state.commentsList}
+                  itemsList={this.state.itemsList}
                 />
               )}
             />

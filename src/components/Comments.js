@@ -36,17 +36,20 @@ class Comments extends Component {
             </div>
 
             <ul>
-              {this.props.commentsList.map((comment) =>
-                comment.id === this.props.location.pathname.slice(10) ? (
-                  <ul key={comment.id}>
-                    <div className="item-details-block">
-                      <div className="container-flex-row">
-                        <div className="item-square pinked" />
-                        <p className="common-text">{comment.text}</p>
-                      </div>
-                    </div>
-                  </ul>
-                ) : null
+              {this.props.itemsList.map((i) =>
+                i.id == this.props.location.pathname.slice(10) &&
+                i.comments.length
+                  ? i.comments.map((c) => (
+                      <ul key={Math.random()}>
+                        <div className="item-details-block">
+                          <div className="container-flex-row">
+                            <div className="item-square pinked" />
+                            <p className="common-text">{c.text}</p>
+                          </div>
+                        </div>
+                      </ul>
+                    ))
+                  : null
               )}
             </ul>
 
